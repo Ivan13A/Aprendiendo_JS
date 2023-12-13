@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="recargar">
+        <div>
+            <label for="name">Nombre: </label>
+            <input type="text" id="name" placeholder="Escriba su nombre: ">
+        </div>
+        <div>
+            <button id="calcular" onclick="salida()">Calcular</button>
+        </div>
+        <div>
+            <p id="result"></p>
+        </div>
+    </form>
+    <script>
+        const fname = document.getElementById("name");
+        const calcular = document.getElementById("calcular");
+        const recargarForm = document.getElementById("recargar");
+
+        function salida() {
+            var name = String(fname.value);
+            var tamañoName = name.split("");
+
+            var numbers = {0,1,2,3,4,5,6,7,8,9};
+
+            if (tamañoName.length < 2 || tamañoName.length > 20) {
+                alert(" el nombre debe estar en el rango de 3 a 20 caracteres");
+                fname.style.backgroundColor = "red";
+            }else{
+                fname.style.backgroundColor = "green";
+            }
+
+            for (let i = 0; i < tamañoName.length; i++) {
+                const element = array[i];
+                
+            }
+        }
+
+        // Llama a la función recargar() al cargar la página
+        window.onload = recargar;
+
+        function recargar() {
+            // Enfoca la caja de texto al recargar la página
+            fname.focus();
+        }
+
+
+    </script>
+</body>
+
+</html>
