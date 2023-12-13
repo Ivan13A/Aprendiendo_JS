@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <div>
+        <label for="">nombre: </label>
+        <input onblur="salida()" type="text" id="name">
+        </div>
+        <div>
+            <label for="apellido">apellido: </label>
+            <input onblur="salida()" type="text" id="apellido">
+        </div>
+        <div>
+            <button onclick="calcular()" id="btn">calcular</button>
+        </div>
+        <p id="calcular"></p>
+    </div>
+
+    <script>
+        const fname = document.getElementById("name");
+        const lname = document.getElementById ("apellido");
+        const btn = document.getElementById("btn");
+        const p = document.getElementById("calcular");
+        
+
+        // btn.addEventListener("click",()=>{
+
+        // })
+        function calcular(){
+            var name = String(fname.value);
+            var apellido = String(lname.value);
+
+            var nameOne = name.toUpperCase();
+            var apellidoOne = apellido.toUpperCase();
+            
+            p.innerHTML ="<strong>"+nameOne+" "+apellidoOne+"<strong>";
+        }
+        function salida() {
+            var name = String(fname.value);
+            var apellido = String(lname.value);
+
+            var tamañoName= name.split("");
+            var tamañoApellido = apellido.split("");
+
+            // if (name === "" && apellido === "") {
+            //     alert("la caja de nombre no puede estar vacia");
+            // }else{
+                
+            // }
+            
+            if (tamañoName.length < 2 || tamañoName.length > 20) {
+                alert(" el nombre debe estar en el rango de 3 a 20 caracteres");
+                fname.style.backgroundColor = "red";
+            }else{
+                fname.style.backgroundColor = "green";
+            }
+            if (tamañoApellido.length < 2 || tamañoApellido.length >20) {
+                alert(" el apellido debe estar en el rango de 3 a 20 caracteres");
+                lname.style.backgroundColor = "red";
+            }else{
+                lname.style.backgroundColor = "green";
+            }
+        }
+
+
+        // console.log(name + apellido);
+    </script>
+</body>
+</html>
